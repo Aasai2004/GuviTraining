@@ -1,7 +1,9 @@
 package day5;
 
+import java.util.Arrays;
+
 public class SelectionSort {
-	public static void selectionSort(int arr[]) {
+	public static int[] selectionSort(int[] arr) {
 		int n = arr.length;
 		for(int i=0; i<n-1; i++) {
 			int minIndex = i;
@@ -19,13 +21,13 @@ public class SelectionSort {
 			arr[i]=temp;
 			
 		}
+		return arr;
 	}
     public static void main(String[] arg ) {
     	int arr[] = {64,25,12,22,11};
-    	selectionSort(arr);
-    	System.out.println("Sorted array : ");
-    	for(int num:arr) {
-    		System.out.println(num+ " ");
-    	}
+    	int[] arrs = selectionSort(arr);
+ 
+    	System.out.println("Sorted array : " + Arrays.toString(arrs));
+
     }
 }
