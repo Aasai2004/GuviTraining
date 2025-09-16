@@ -71,7 +71,6 @@ public class LinkedListOperations {
     			}
     			curr = curr.next;
     		}
-    		System.out.println("Searching is present ");
     	}
 		return false;
     	
