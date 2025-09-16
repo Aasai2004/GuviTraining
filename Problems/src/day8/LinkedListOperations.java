@@ -1,5 +1,7 @@
 package day8;
-import java.util.*;
+
+
+
 public class LinkedListOperations {
 	Node head;
 	public void addNode(int val) {
@@ -25,8 +27,8 @@ public class LinkedListOperations {
 		while(current!=null) {
 			System.out.print(current.data+"->");
 			current = current.next;
-		}
-		System.out.print("null");
+		} 
+		System.out.println("null");
 	}
 	public void insertAtBeginning(int val) {
 		Node newNode=new Node(val);
@@ -57,6 +59,38 @@ public class LinkedListOperations {
     		curr.next = null;
     	}
     }
+    public boolean search(Node head,int target) {
+    	if(head==null) {
+    	System.out.println("List is Empty....");
+    	}
+    	else {
+    		Node curr = head;
+    		while(curr != null) {
+    			if(target == curr.data) {
+    				return true;
+    			}
+    			curr = curr.next;
+    		}
+    		System.out.println("Searching is present ");
+    	}
+		return false;
+    	
+    }
+    public void size() {
+    	
+    	if(head==null) {
+    		System.out.println("List is Empty");
+    	}
+    	else {
+            int count = 0;
+            Node current = head;
+            while(current != null) {
+                count++;
+                current = current.next;
+            }
+            System.out.println("Size of the list: " + count);
+    	}
+    }
 	public static void main(String[] str) {
 		LinkedListOperations list=new LinkedListOperations();
 		list.addNode(10);
@@ -68,6 +102,8 @@ public class LinkedListOperations {
 		list.deleteBeginnig();
 		list.deleteAtEnd();
 		list.traverse();
+		list.search(list.head, 30);
+		list.size();
 		
 
 	}
